@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGri - Login</title>
+        <style>
+            /* Stylesheet for login page */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-top: 10px;
+            }
+
+            input {
+                margin-bottom: 10px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        </style>
+        <script>
+            // Sample user data for demonstration purposes
+            const sampleUser = {
+                username: "demoUser",
+                password: "demoPassword"
+            };
+
+            // Function to handle user login
+            function submitLogin() {
+                // Get form values
+                var enteredUsername = document.getElementById('username').value;
+                var enteredPassword = document.getElementById('password').value;
+
+                // Validate form data (you can add more validation logic)
+                if (!enteredUsername || !enteredPassword) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                // Check if entered credentials match the sample user (for demonstration purposes)
+                if (enteredUsername === sampleUser.username && enteredPassword === sampleUser.password) {
+                    alert('Login successful!'); // In a real application, you would redirect to the user's dashboard.
+                } else {
+                    alert('Invalid credentials. Please try again.');
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login to AGri</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+    
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+    
+                <button type="button" onclick="submitLogin()">Login</button>
+            </form>
+        </div>
+    
+        <script src="app.js"></script>
+    </body>
+    </html>

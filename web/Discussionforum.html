@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGri Forum</title>
+        <style>
+            /* Stylesheet for forum */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            #forumPosts {
+                margin-top: 20px;
+            }
+
+            .post {
+                margin-bottom: 20px;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+            .post p {
+                margin: 0;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            label {
+                margin-top: 10px;
+            }
+
+            input,
+            textarea {
+                margin-bottom: 10px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+        <script>
+            // Sample data for demonstration purposes
+            const samplePosts = [
+                { username: "Farmer1", content: "What's the best fertilizer for tomatoes?" },
+                { username: "Farmer2", content: "I tried a new irrigation system, and it worked wonders!" },
+                { username: "Farmer3", content: "Any recommendations for pest control in corn fields?" }
+            ];
+
+            // Function to display forum posts
+            function displayPosts() {
+                const forumPosts = document.getElementById('forumPosts');
+
+                // Clear existing posts
+                forumPosts.innerHTML = '';
+
+                // Display each post
+                samplePosts.forEach(post => {
+                    const postDiv = document.createElement('div');
+                    postDiv.classList.add('post');
+                    postDiv.innerHTML = `<p><strong>${post.username}:</strong> ${post.content}</p>`;
+                    forumPosts.appendChild(postDiv);
+                });
+            }
+
+            // Function to submit a new post
+            function submitPost() {
+                const username = document.getElementById('username').value;
+                const postContent = document.getElementById('postContent').value;
+
+                if (!username || !postContent) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                const newPost = { username, content: postContent };
+
+                // For now, let's just add the new post to the sample data
+                samplePosts.push(newPost);
+
+                // Display the updated posts
+                displayPosts();
+            }
+
+            // Initial display of forum posts
+            displayPosts();
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to AGri Forum</h1>
+            <div id="forumPosts"></div>
+            <form id="postForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="postContent">Post:</label>
+                <textarea id="postContent" name="postContent" required></textarea>
+
+                <button type="button" onclick="submitPost()">Post</button>
+            </form>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

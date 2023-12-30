@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGri - Sign Up</title>
+        <style>
+            /* Stylesheet for sign-up page */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-top: 10px;
+            }
+
+            input {
+                margin-bottom: 10px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #4caf50;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+        <script>
+            // Function to handle user signup
+            function submitSignup() {
+                // Get form values
+                var fullName = document.getElementById('fullName').value;
+                var username = document.getElementById('username').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                // Validate form data (you can add more validation logic)
+                if (!fullName || !username || !email || !password) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                // Create a user object
+                var user = {
+                    fullName: fullName,
+                    username: username,
+                    email: email,
+                    password: password
+                };
+
+                // For now, let's just log the user object to the console
+                console.log(user);
+
+                // In a real application, you would send this data to a server for user registration
+                // and handle the response accordingly (e.g., redirect to a login page on success).
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Sign Up for AGri</h1>
+            <form id="signupForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="button" onclick="submitSignup()">Sign Up</button>
+            </form>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

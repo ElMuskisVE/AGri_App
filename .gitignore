@@ -1,0 +1,31 @@
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Node.js files
+node_modules/
+npm-debug.log
+
+# Visual Studio Code
+.vscode/
+
+# Compiled files
+dist/
+*.min.js
+*.min.css
+
+# Log files
+*.log
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

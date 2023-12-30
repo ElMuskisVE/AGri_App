@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AGri - Home</title>
+        <style>
+            /* Stylesheet for home page */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+
+            nav ul {
+                list-style-type: none;
+                display: flex;
+            }
+
+            nav li {
+                margin-right: 20px;
+            }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero h2 {
+                color: #333;
+            }
+
+            .cta-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #4caf50;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 4px;
+            }
+
+            .cta-button:hover {
+                background-color: #45a049;
+            }
+
+            .features {
+                margin-top: 30px;
+            }
+
+            .features h2 {
+                color: #333;
+            }
+
+            .features ul {
+                list-style-type: none;
+            }
+
+            .features li {
+                margin-bottom: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="AGri Logo">
+                <h1>AGri</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <!-- Add more navigation links as needed -->
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <h2>Welcome to AGri</h2>
+                <p>Your source for agricultural knowledge and community.</p>
+                <a href="signup.html" class="cta-button">Get Started</a>
+            </section>
+
+            <section class="features">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Connect with other farmers in the community.</li>
+                    <li>Share your farming experiences and knowledge.</li>
+                    <li>Access valuable resources for your farm.</li>
+                </ul>
+            </section>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>

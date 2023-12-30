@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGri - User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-top: 10px;
+        }
+        
+        input,
+        textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+    <script>
+        function saveProfile() {
+        // Get form values
+            var fullName = document.getElementById('fullName').value;
+            var farmingPractices = document.getElementById('farmingPractices').value;
+            var crops = document.getElementById('crops').value;
+            var location = document.getElementById('location').value;
+
+            // Validate form data (you can add more validation logic)
+            if (!fullName || !farmingPractices || !crops || !location) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Create a user object
+            var user = {
+                fullName: fullName,
+                farmingPractices: farmingPractices,
+                crops: crops,
+                location: location
+            };
+
+            // For now, let's just log the user object to the console
+            console.log(user);
+
+            // In a real application, you would send this data to a server for storage
+            // and handle the response accordingly (e.g., show a success message to the user).
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your AGri Profile</h1>
+        <form id="profileForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="farmingPractices">Farming Practices:</label>
+            <textarea id="farmingPractices" name="farmingPractices" required></textarea>
+
+            <label for="crops">Crops:</label>
+            <input type="text" id="crops" name="crops" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="button" onclick="saveProfile()">Save Profile</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

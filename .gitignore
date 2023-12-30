@@ -29,3 +29,8 @@ jspm_packages/
 *.njsproj
 *.sln
 *.swp
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
